@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\ProgramData\chocolatey\lib\kubernetes-kompose\tools\kompose.exe convert
+    kompose.version: 1.32.0 (765fde254)
+  labels:
+    io.kompose.service: result
+  name: result
+spec:
+  ports:
+    - name: "5001"
+      port: 5001
+      targetPort: 80
+    - name: "9229"
+      port: 9229
+      targetPort: 9229
+  selector:
+    io.kompose.service: result
